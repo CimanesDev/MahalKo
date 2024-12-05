@@ -1,31 +1,24 @@
-// Function to calculate the next monthsary (1st of the next month)
 function getNextMonthsary() {
     var now = new Date();
 
-    // Get the current month and year
-    var currentMonth = now.getMonth();  // 0 = January, 1 = February, etc.
+    var currentMonth = now.getMonth();
     var currentYear = now.getFullYear();
 
-    // If today is the first of the month, use the current month for monthsary
     if (now.getDate() === 1) {
-        return now; // Today is the monthsary!
+        return now;
     }
 
-    // Set the next monthsary to the first of the next month
     var nextMonthsary = new Date(currentYear, currentMonth + 1, 1);
 
     return nextMonthsary;
 }
 
-// Function to set a specific anniversary date
 function getAnniversaryDate() {
-    // Set your relationship anniversary date (change this to your actual anniversary)
     var anniversary = new Date("Sept 1, 2025 00:00:00");
 
     return anniversary;
 }
 
-// Function to set her birthday date
 function getBirthdayDate() {
     // Set her birthday (April 8)
     var birthday = new Date("April 8, 2025 00:00:00");
@@ -103,3 +96,13 @@ var x = setInterval(function() {
     }
 
 }, 1000);
+
+window.onload = () => {
+    const hearts = document.querySelectorAll('.floating-heart');
+    hearts.forEach(heart => {
+      const randomX = Math.random();
+      const randomY = Math.random();
+      heart.style.setProperty('--random-x', randomX);
+      heart.style.setProperty('--random-y', randomY);
+    });
+  };

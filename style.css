@@ -1,22 +1,22 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-image: url('mylove.jpg'); /* Set the image as background */
-    background-size: cover; /* Make sure it covers the entire screen */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-image: url('mylove.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    color: #fff; /* Text color changed to white for contrast */
-    overflow: hidden; /* Hide overflow if needed */
+    color: #fff;
+    overflow: hidden;
 }
 
 .container {
     text-align: center;
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent background */
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     width: 80%;
@@ -28,6 +28,12 @@ h1 {
     font-size: 2.5em;
     color: #ff4081;
     margin-bottom: 30px;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: #ff80b0;
+    text-shadow: 0 0 15px rgba(255, 80, 176, 0.8);
 }
 
 .timer-container {
@@ -43,6 +49,11 @@ h2 {
     font-size: 2em;
     color: #ff4081;
     margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+h2:hover {
+    color: #ff80b0;
 }
 
 #monthsary-timer, #anniversary-timer, #birthday-timer {
@@ -59,28 +70,65 @@ h2 {
     font-style: italic;
 }
 
-/* Hover effect for the container */
 .container:hover {
-    transform: scale(1.05); /* Slightly enlarge the container on hover */
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* Increase shadow for depth */
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover effect for the timer sections */
 .timer-container:hover {
-    transform: scale(1.05); /* Slightly enlarge the section on hover */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Smooth transition effect */
-.timer-container,
-.container {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+.floating-heart {
+    font-size: 80px;
+    position: absolute;
+    color: #ff6b81;
+    animation: float 6s ease-in-out infinite, bounce 2s ease-in-out infinite;
+    pointer-events: none;
+    transition: transform 0.2s ease;
 }
 
-h1, h2 {
-    transition: color 0.3s ease;
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-150px) scale(1.1);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
 }
 
-h1:hover, h2:hover {
-    color: #ff80b0; /* Lighter pink on hover */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
+
+
+.floating-heart:nth-child(odd) {
+    animation-duration: 8s;
+    left: calc(100% * var(--random-x));
+    top: calc(100% * var(--random-y));
+}
+
+.floating-heart:nth-child(even) {
+    animation-duration: 6s;
+    left: calc(100% * var(--random-x));
+    top: calc(100% * var(--random-y));
+}
+
+
+.floating-heart:hover {
+    transform: scale(1.3) !important;
+    animation-duration: 1s;
+    color: #ff80b0;
+}
+
