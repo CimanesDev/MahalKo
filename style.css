@@ -1,0 +1,86 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('mylove.jpg'); /* Set the image as background */
+    background-size: cover; /* Make sure it covers the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff; /* Text color changed to white for contrast */
+    overflow: hidden; /* Hide overflow if needed */
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent background */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ff4081;
+    margin-bottom: 30px;
+}
+
+.timer-container {
+    background-color: #ffe0f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+h2 {
+    font-size: 2em;
+    color: #ff4081;
+    margin-bottom: 10px;
+}
+
+#monthsary-timer, #anniversary-timer, #birthday-timer {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.special-message {
+    font-size: 1.5em;
+    color: #ff4081;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Hover effect for the container */
+.container:hover {
+    transform: scale(1.05); /* Slightly enlarge the container on hover */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* Increase shadow for depth */
+}
+
+/* Hover effect for the timer sections */
+.timer-container:hover {
+    transform: scale(1.05); /* Slightly enlarge the section on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Smooth transition effect */
+.timer-container,
+.container {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+h1, h2 {
+    transition: color 0.3s ease;
+}
+
+h1:hover, h2:hover {
+    color: #ff80b0; /* Lighter pink on hover */
+}
