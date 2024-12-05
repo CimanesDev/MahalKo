@@ -28,12 +28,6 @@ h1 {
     font-size: 2.5em;
     color: #ff4081;
     margin-bottom: 30px;
-    transition: color 0.3s ease;
-}
-
-h1:hover {
-    color: #ff80b0;
-    text-shadow: 0 0 15px rgba(255, 80, 176, 0.8);
 }
 
 .timer-container {
@@ -49,11 +43,6 @@ h2 {
     font-size: 2em;
     color: #ff4081;
     margin-bottom: 10px;
-    transition: color 0.3s ease;
-}
-
-h2:hover {
-    color: #ff80b0;
 }
 
 #monthsary-timer, #anniversary-timer, #birthday-timer {
@@ -61,13 +50,6 @@ h2:hover {
     color: #333;
     font-weight: bold;
     margin-top: 10px;
-}
-
-.special-message {
-    font-size: 1.5em;
-    color: #ff4081;
-    margin-top: 20px;
-    font-style: italic;
 }
 
 .container:hover {
@@ -80,26 +62,24 @@ h2:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-
+/* Floating Hearts */
 .floating-heart {
-    font-size: 80px;
+    font-size: 50px;
     position: absolute;
     color: #ff6b81;
-    animation: float 6s ease-in-out infinite, bounce 2s ease-in-out infinite;
+    animation: float 5s ease-in-out infinite, bounce 2s ease-in-out infinite;
     pointer-events: none;
-    transition: transform 0.2s ease;
 }
-
 
 @keyframes float {
     0% {
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
     }
     50% {
-        transform: translateY(-150px) scale(1.1);
+        transform: translateY(-100px);
     }
     100% {
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
     }
 }
 
@@ -108,27 +88,36 @@ h2:hover {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-15px);
     }
 }
 
+/* Mobile Optimization */
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 10px; /* Add padding around the body */
+    }
 
-.floating-heart:nth-child(odd) {
-    animation-duration: 8s;
-    left: calc(100% * var(--random-x));
-    top: calc(100% * var(--random-y));
+    .container {
+        width: 100%; /* Make the container take full width on small screens */
+        padding: 20px;
+        box-shadow: none; /* Remove shadow for better performance on mobile */
+    }
+
+    h1 {
+        font-size: 2em; /* Adjust font size for the header */
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.5em; /* Adjust font size for the timers */
+    }
+
+    #monthsary-timer, #anniversary-timer, #birthday-timer {
+        font-size: 2em; /* Adjust font size for the timer numbers */
+    }
+
+    .floating-heart {
+        font-size: 40px; /* Reduce the size of floating hearts for small screens */
+    }
 }
-
-.floating-heart:nth-child(even) {
-    animation-duration: 6s;
-    left: calc(100% * var(--random-x));
-    top: calc(100% * var(--random-y));
-}
-
-
-.floating-heart:hover {
-    transform: scale(1.3) !important;
-    animation-duration: 1s;
-    color: #ff80b0;
-}
-
